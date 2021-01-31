@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'fantasy-calculator',
+    loadChildren: () => import('./modules/fantasy-calculator/fantasy-calculator.module').then(m => m.FantasyCalculatorModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
