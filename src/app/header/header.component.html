@@ -2,12 +2,15 @@
   <div class="container-fluid">
     <div class="row">
       <div class="title-icon-area col-3">
-        <button mat-button>
-          <span>My App</span>
+        <button mat-button (click)="goTo('home')">
+          <img src="assets/FootballWiz.png" height="50" alt="FootballWiz">
         </button>
       </div>
       <div class="options-area col-6">
-        Here Comes the buttons
+        <button mat-button *ngFor="let module of moduleList"
+        (click)="goTo(module.moduleRoute)">
+          <span>{{module.moduleLabel}}</span>
+        </button>
       </div>
       <div class="tools-area col-3">
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
