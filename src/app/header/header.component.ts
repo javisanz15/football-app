@@ -13,22 +13,27 @@ export class HeaderComponent implements OnInit {
     {
       moduleLabel: 'FantasyWiz',
       moduleRoute: 'fantasy-calculator',
+      active: true,
     },
     {
       moduleLabel: 'Equipos',
       moduleRoute: 'teams',
+      active: false,
     },
     {
       moduleLabel: 'Jugadores',
       moduleRoute: 'players',
+      active: false,
     },
     {
       moduleLabel: 'Mercado',
       moduleRoute: 'players',
+      active: false,
     },
     {
       moduleLabel: 'Bajas',
       moduleRoute: 'players',
+      active: false,
     }
   ];
 

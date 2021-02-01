@@ -6,21 +6,19 @@
     min-height: calc( 100vh - 128px );
     .left-side-container {
       padding: 50px 100px 50px 50px;
+      font-family: Poppins;
+      .page-title {
+        font-size: 35px;
+        font-weight: 700;
+      }
     }
   }
   .home-right-side {
     width: 30%;
     min-height: calc( 100vh - 128px );
     border-left: 15px solid white;
-    background-color: steelblue;
+    background-image: url("../../../assets/grass.jpg");
   }
 }
-.circle-area {
-  position: absolute;
-  top: calc( 50vh - 128px);
-  right: 22.1vw;
-  img {
-    fill: white;
-  }
-}
+
 

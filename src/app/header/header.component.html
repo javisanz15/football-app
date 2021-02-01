@@ -8,7 +8,7 @@
       </div>
       <div class="options-area col-6">
         <button mat-button *ngFor="let module of moduleList"
-        (click)="goTo(module.moduleRoute)">
+        (click)="goTo(module.moduleRoute)" [disabled]="!module.active">
           <span>{{module.moduleLabel}}</span>
         </button>
       </div>
