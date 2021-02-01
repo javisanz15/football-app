@@ -1,4 +1,27 @@
 .home-container {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  position: relative;
+  display: flex;
+  .home-left-side {
+    width: 70%;
+    min-height: calc( 100vh - 128px );
+    .left-side-container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  .home-right-side {
+    width: 30%;
+    min-height: calc( 100vh - 128px );
+    border-left: 15px solid white;
+    background-color: steelblue;
+  }
 }
+.circle-area {
+  position: absolute;
+  top: calc( 50vh - 128px);
+  right: 22vw;
+  img {
+    fill: white;
+  }
+}
+
