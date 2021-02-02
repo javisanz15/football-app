@@ -1,0 +1,29 @@
+<div class="home-container">
+  <div class="home-left-side">
+    <div class="container left-side-container">
+      <h1 class="page-title">Bienvenido a FootballWiz</h1>
+      <div class="page-subtitle">
+        Este es tu portal de referencia para mantenerte al tanto de La Liga de futbol.
+        Consulta los puntos de los jugadores de tu equipo favorito y de tu equipo de La liga Fantasy.
+        Puedes usar tambien nuestra aplicacion FantasyWiz, para seleccionar el mejor equipo posible para la
+        siguiente jornada.
+      </div>
+      <br>
+      <div class="page-subtitle">
+        En la tabla inferior puedes ver los resultados de la ultima jornada.
+        Si quieres mas detalles acerca de un partido, puedes pinchar sobre el.
+      </div>
+      <div class="carousel-area">
+        <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="auto"
+          [proportion]="25" [slides]="3" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
+          [useMouseWheel]="false" orientation="ltr">
+          <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index"
+            overlayColor="#00000040" [hideOverlay]="false">
+            {{slide}}
+          </mat-carousel-slide>
+        </mat-carousel>
+      </div>
+    </div>
+  </div>
+  <div class="home-right-side"></div>
+</div>
