@@ -22,6 +22,20 @@
         .card-container {
           .calendar-card {
             height: 100%;
+            .date-area {
+              text-align: center;
+            }
+            .teams-area{
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              .team-area {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+            }
           }
         }
       }

@@ -26,7 +26,19 @@
             <div class="inside-slide row">
               <div class="card-container col-6"  *ngFor="let card of slide; let i = index">
                 <mat-card class="calendar-card">
-                  {{card.id}}
+                  <div class="date-area">
+                    {{dateService.getHour(card.matchDate)}}
+                  </div>
+                  <div class="teams-area">
+                    <div class="team-area">
+                      <img src="{{card.local.badgeWhite}}" alt="nope" height="70">
+                      <div class="team-name">{{card.local.mainName}}</div>
+                    </div>
+                    <div class="team-area">
+                      <img src="{{card.visitor.badgeWhite}}" alt="nope" height="70">
+                      <div class="team-name">{{card.visitor.mainName}}</div>
+                    </div>
+                  </div>
                 </mat-card>
               </div>
             </div>

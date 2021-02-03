@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HomeService } from '../../services/home.service';
 import { tap } from 'rxjs/operators';
 import { CalendarItem, CalendarTeamItem } from 'src/app/models/calendar.model';
+import { DateService } from 'src/app/utils/date/date.service';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   slides: Array<CalendarItem[]> = [];
   constructor(
     private homeService: HomeService,
+    public dateService: DateService,
   ) { 
     this.calendarObservable$ = this.homeService.getShortlistOfGames().pipe(
       tap(result => this.slides = this.chunkArray(result, 2)),
