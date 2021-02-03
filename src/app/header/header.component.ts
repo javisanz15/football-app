@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ModuleList } from '../models/common.model';
 
 @Component({
@@ -10,42 +11,43 @@ import { ModuleList } from '../models/common.model';
 })
 export class HeaderComponent implements OnInit {
 
-  selectedLanguage: string = 'spain.png';
+  selectedLanguage: string = 'es';
   moduleList: ModuleList[] = [
     {
-      moduleLabel: 'FantasyWiz',
+      moduleLabel: 'menu.fantasyWiz',
       moduleRoute: 'fantasy-calculator',
       active: true,
     },
     {
-      moduleLabel: 'Equipos',
+      moduleLabel: 'menu.teams',
       moduleRoute: 'teams',
       active: false,
     },
     {
-      moduleLabel: 'Jugadores',
+      moduleLabel: 'menu.players',
       moduleRoute: 'players',
       active: false,
     },
     {
-      moduleLabel: 'Partidos',
+      moduleLabel: 'menu.matches',
       moduleRoute: 'matches',
       active: false,
     },
     {
-      moduleLabel: 'Mercado',
+      moduleLabel: 'menu.players',
       moduleRoute: 'players',
       active: false,
     },
     {
-      moduleLabel: 'Bajas',
-      moduleRoute: 'players',
+      moduleLabel: 'menu.injuries',
+      moduleRoute: 'injuries',
       active: false,
     }
   ];
 
   constructor(
     private router: Router,
+    public translate: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -57,6 +59,7 @@ export class HeaderComponent implements OnInit {
 
   selectLanguage(newValue: string) {
     this.selectedLanguage = newValue;
+    this.translate.use(newValue);
   }
 
 }

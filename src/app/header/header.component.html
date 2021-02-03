@@ -9,25 +9,25 @@
       <div class="options-area col-6">
         <button mat-button *ngFor="let module of moduleList"
         (click)="goTo(module.moduleRoute)" [disabled]="!module.active">
-          <span>{{module.moduleLabel}}</span>
+          <span>{{module.moduleLabel | translate}}</span>
         </button>
       </div>
       <div class="tools-area col-3">
         <!-- Aqui va el cambio de idioma -->
         <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
           <div class="flag-image-area">
-            <img src="../../assets/{{selectedLanguage}}" alt="Flag" height="50" width="50">
+            <img src="../../assets/{{selectedLanguage}}.png" alt="Flag" height="50" width="50">
           </div>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="selectLanguage('spain.png')">
+          <button mat-menu-item (click)="selectLanguage('es')">
             <div class="flag-menu-area">
-              <img src="../../assets/spain.png" alt="ESP" height="50" width="50">
+              <img src="../../assets/es.png" alt="ESP" height="50" width="50">
             </div>
           </button>
-          <button mat-menu-item (click)="selectLanguage('unitedkingdom.png')">
+          <button mat-menu-item (click)="selectLanguage('en')">
             <div class="flag-menu-area">
-              <img src="../../assets/unitedkingdom.png" alt="UK" height="50" width="50">
+              <img src="../../assets/en.png" alt="UK" height="50" width="50">
             </div>
           </button>
         </mat-menu>

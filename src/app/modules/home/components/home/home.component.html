@@ -1,21 +1,17 @@
 <div class="home-container">
   <div class="home-left-side">
     <div class="container left-side-container">
-      <h1 class="page-title">Bienvenido a FootballWiz</h1>
+      <h1 class="page-title">{{ 'welcomeMessage' | translate}}</h1>
       <div class="page-subtitle">
-        Este es tu portal de referencia para mantenerte al tanto de La Liga de futbol.
-        Consulta los puntos de los jugadores de tu equipo favorito y de tu equipo de La liga Fantasy.
-        Puedes usar tambien nuestra aplicacion FantasyWiz, para seleccionar el mejor equipo posible para la
-        siguiente jornada.
+        {{'subtitles.subtitle1' | translate}}
       </div>
       <br>
       <div class="page-subtitle">
-        En la tabla inferior puedes ver los resultados de la proxima jornada.
-        Si quieres mas detalles acerca de un partido, puedes pinchar sobre el.
+        {{'subtitles.subtitle2' | translate}}
       </div>
       <br>
       <div class="page-subtitle">
-        Para ver los resultados de todas las jornadas, puedes hacerlo en detalle entrando en la seccion "Partidos".
+        {{'subtitles.subtitle3' | translate}}
       </div>
       <div class="carousel-area" *ngIf="calendarObservable$ | async as calendar">
         <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="auto"
