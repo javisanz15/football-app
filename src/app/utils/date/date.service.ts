@@ -6,7 +6,13 @@ import * as moment from 'moment';
 })
 export class DateService {
 
-constructor() { }
+constructor() { 
+  moment.locale('es');
+}
+
+getWrittenDateAndMonth(date: Date): string {
+  return `${moment(date).format('D')} ${moment(date).format('MMM')}`
+}
 
 getHour(date: Date): string{
   return `${moment(date).format('HH:mm')} h`;

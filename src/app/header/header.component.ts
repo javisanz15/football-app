@@ -26,6 +26,11 @@ export class HeaderComponent implements OnInit {
       active: false,
     },
     {
+      moduleLabel: 'Partidos',
+      moduleRoute: 'matches',
+      active: false,
+    },
+    {
       moduleLabel: 'Mercado',
       moduleRoute: 'players',
       active: false,

@@ -24,11 +24,17 @@
             height: 100%;
             .date-area {
               text-align: center;
+              margin-bottom: 10px;
             }
             .teams-area{
               display: flex;
               align-items: center;
               justify-content: space-around;
+              .team-divider {
+                font-size: 30px;
+                display: flex;
+                justify-content: space-between;
+              }
               .team-area {
                 display: flex;
                 flex-direction: column;

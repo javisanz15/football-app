@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
     MatCarouselModule,
     HttpClientModule,
     MatCardModule,
+    RouterModule,
   ],
   declarations: [
     HomeComponent
