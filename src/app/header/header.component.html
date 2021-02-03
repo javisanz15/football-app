@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="title-icon-area col-3">
+        <button mat-button (click)="goTo('home')">
+          <img src="assets/FootballWiz.png" height="50" alt="FootballWiz">
+        </button>
+      </div>
+      <div class="options-area col-6">
+        <button mat-button *ngFor="let module of moduleList"
+        (click)="goTo(module.moduleRoute)" [disabled]="!module.active">
+          <span>{{module.moduleLabel | translate}}</span>
+        </button>
+      </div>
+      <div class="tools-area col-3">
+        <!-- Aqui va el cambio de idioma -->
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+          <div class="flag-image-area">
+            <img src="../../assets/{{selectedLanguage}}.png" alt="Flag" height="50" width="50">
+          </div>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="selectLanguage('es')">
+            <div class="flag-menu-area">
+              <img src="../../assets/es.png" alt="ESP" height="50" width="50">
+            </div>
+          </button>
+          <button mat-menu-item (click)="selectLanguage('en')">
+            <div class="flag-menu-area">
+              <img src="../../assets/en.png" alt="UK" height="50" width="50">
+            </div>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

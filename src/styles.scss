@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  background-color: #b0bec5;
+}
+
+.carousel-indicators {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}

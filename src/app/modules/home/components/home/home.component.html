@@ -1,0 +1,57 @@
+<div class="home-container">
+  <div class="home-left-side">
+    <div class="container left-side-container">
+      <h1 class="page-title">{{ 'welcomeMessage' | translate}}</h1>
+      <div class="page-subtitle">
+        {{'subtitles.subtitle1' | translate}}
+      </div>
+      <br>
+      <div class="page-subtitle">
+        {{'subtitles.subtitle2' | translate}}
+      </div>
+      <br>
+      <div class="page-subtitle">
+        {{'subtitles.subtitle3' | translate}}
+      </div>
+      <div class="carousel-area" *ngIf="calendarObservable$ | async as calendar">
+        <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="auto"
+          [proportion]="25" [slides]="3" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
+          [useMouseWheel]="false" orientation="ltr">
+          <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index"
+            overlayColor="#00000040" [hideOverlay]="false">
+            <div class="inside-slide row">
+              <div class="card-container col-6"  *ngFor="let card of slide; let i = index">
+                <mat-card class="calendar-card" (click)="goToMatchDetail(card.id)">
+                  <div class="date-area">
+                    <div class="day-month">{{dateService.getWrittenDateAndMonth(card.matchDate) | titlecase}}</div>
+                    <div class="hour">{{dateService.getHour(card.matchDate)}}</div>
+                  </div>
+                  <div class="teams-area row">
+                    <div class="team-area col-4">
+                      <img src="{{card.local.badgeWhite}}" alt="nope" height="70">
+                      <div class="team-name">{{card.local.mainName}}</div>
+                    </div>
+                    <div class="team-divider col-4">
+                      <div class="team-result">
+                        {{card.localScore || ''}}
+                      </div>
+                      -
+                      <div class="team-result">
+                        {{card.visitorScore || ''}}
+                      </div>
+                    </div>
+                    <div class="team-area col-4">
+                      <img src="{{card.visitor.badgeWhite}}" alt="nope" height="70">
+                      <div class="team-name">{{card.visitor.mainName}}</div>
+                    </div>
+                  </div>
+                </mat-card>
+              </div>
+            </div>
+          </mat-carousel-slide>
+        </mat-carousel>
+      </div>
+    </div>
+  </div>
+  <div class="home-right-side"></div>
+</div>

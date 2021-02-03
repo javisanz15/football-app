@@ -1,0 +1,16 @@
+{
+  "welcomeMessage": "Welcome to FootballWiz",
+  "menu": {
+    "fantasyWiz": "FantasyWiz",
+    "teams": "Teams",
+    "players": "Players",
+    "matches": "Matches",
+    "market": "Market",
+    "injuries": "Injuries"
+  },
+  "subtitles": {
+    "subtitle1": "This is your reference website to keep track of the Spanish Football League. Check out the Fantasy Points and the overall performance of your favourite team's and fantasy team's players. You can also use our tool FantasyWiz, to help you form your best lineup for the next match date.",
+    "subtitle2": "In the graphic below you can visualize the scores and games for the next match date. If you would like to see further details about a game, click on it.",
+    "subtitle3": "To visualize the scores of every match date, you are able to do it by using the section \"Matches\"."
+  }
+}
