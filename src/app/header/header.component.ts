@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModuleList } from '../models/common.model';
 
@@ -9,6 +10,7 @@ import { ModuleList } from '../models/common.model';
 })
 export class HeaderComponent implements OnInit {
 
+  selectedLanguage: string = 'spain.png';
   moduleList: ModuleList[] = [
     {
       moduleLabel: 'FantasyWiz',
@@ -52,5 +54,9 @@ export class HeaderComponent implements OnInit {
   goTo(route: string): void {
     this.router.navigate([route]);
   };
+
+  selectLanguage(newValue: string) {
+    this.selectedLanguage = newValue;
+  }
 
 }

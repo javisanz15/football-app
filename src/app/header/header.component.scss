@@ -9,4 +9,16 @@ mat-toolbar {
     justify-content: flex-end;
     align-items: center;
   }
+  
+  .menu-button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+
+}
+.flag-menu-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

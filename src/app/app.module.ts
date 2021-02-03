@@ -11,14 +11,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [		
     AppComponent,
-      HeaderComponent,
-      FooterComponent
+    HeaderComponent,
+    FooterComponent
    ],
   imports: [
     BrowserModule,
@@ -29,6 +31,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     RouterModule,
     HttpClientModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

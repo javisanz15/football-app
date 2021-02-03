@@ -13,12 +13,24 @@
         </button>
       </div>
       <div class="tools-area col-3">
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
+        <!-- Aqui va el cambio de idioma -->
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+          <div class="flag-image-area">
+            <img src="../../assets/{{selectedLanguage}}" alt="Flag" height="50" width="50">
+          </div>
         </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-         <mat-icon>share</mat-icon>
-       </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="selectLanguage('spain.png')">
+            <div class="flag-menu-area">
+              <img src="../../assets/spain.png" alt="ESP" height="50" width="50">
+            </div>
+          </button>
+          <button mat-menu-item (click)="selectLanguage('unitedkingdom.png')">
+            <div class="flag-menu-area">
+              <img src="../../assets/unitedkingdom.png" alt="UK" height="50" width="50">
+            </div>
+          </button>
+        </mat-menu>
       </div>
     </div>
   </div>
