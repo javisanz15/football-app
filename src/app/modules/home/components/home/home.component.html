@@ -10,16 +10,26 @@
       </div>
       <br>
       <div class="page-subtitle">
-        En la tabla inferior puedes ver los resultados de la ultima jornada.
+        En la tabla inferior puedes ver los resultados de la proxima jornada.
         Si quieres mas detalles acerca de un partido, puedes pinchar sobre el.
       </div>
-      <div class="carousel-area">
+      <br>
+      <div class="page-subtitle">
+        Para ver los resultados de todas las jornadas, puedes hacerlo en detalle entrando en la seccion "Partidos".
+      </div>
+      <div class="carousel-area" *ngIf="calendarObservable$ | async as calendar">
         <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="auto"
           [proportion]="25" [slides]="3" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
           [useMouseWheel]="false" orientation="ltr">
           <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index"
             overlayColor="#00000040" [hideOverlay]="false">
-            {{slide}}
+            <div class="inside-slide row">
+              <div class="card-container col-6"  *ngFor="let card of slide; let i = index">
+                <mat-card class="calendar-card">
+                  {{card.id}}
+                </mat-card>
+              </div>
+            </div>
           </mat-carousel-slide>
         </mat-carousel>
       </div>

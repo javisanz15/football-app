@@ -14,6 +14,17 @@
     }
     .carousel-area {
       padding: 30px 0;
+      .inside-slide {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        .card-container {
+          .calendar-card {
+            height: 100%;
+          }
+        }
+      }
     }
   }
   .home-right-side {
