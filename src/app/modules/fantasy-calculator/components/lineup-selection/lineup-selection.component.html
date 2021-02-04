@@ -5,7 +5,7 @@
         {{'footballWiz.positions.goalkeeperPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.goalkeepers)">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -24,7 +24,7 @@
         {{'footballWiz.positions.defenderPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.defenders)">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -43,7 +43,7 @@
         {{'footballWiz.positions.midfielderPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.midfielders)">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -62,7 +62,7 @@
         {{'footballWiz.positions.strikerPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.strikers)">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>

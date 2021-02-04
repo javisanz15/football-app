@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { LineupItem, PlayerItem, PlayerLineup } from 'src/app/models/player.model';
 
 @Injectable({
@@ -73,7 +73,7 @@ public getPlayerListByPosition(): Observable<PlayerLineup> {
         midfielders: result.filter(item => item.positionId === '3'),
         strikers: result.filter(item => item.positionId === '4'),
       }
-    })
+    }),
   );
 }
 

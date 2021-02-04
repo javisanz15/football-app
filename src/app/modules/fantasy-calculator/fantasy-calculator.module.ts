@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PlayerSelectDialogComponent } from './components/player-select-dialog/player-select-dialog.component';
 
 @NgModule({
   imports: [
@@ -25,10 +27,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
   ],
   declarations: [
     InitComponent,
-    LineupSelectionComponent
+    LineupSelectionComponent,
+    PlayerSelectDialogComponent,
   ]
 })
 export class FantasyCalculatorModule { }

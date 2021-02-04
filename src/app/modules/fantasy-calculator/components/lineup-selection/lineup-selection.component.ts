@@ -4,6 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { PlayerItem, PlayerLineup } from 'src/app/models/player.model';
 import { LineupService } from '../../services/lineup.service';
+import {MatDialog} from '@angular/material/dialog';
+import { PlayerSelectDialogComponent } from '../player-select-dialog/player-select-dialog.component';
 
 @Component({
   selector: 'app-lineup-selection',
@@ -17,6 +19,7 @@ export class LineupSelectionComponent implements OnInit {
   constructor(
     public lineupService: LineupService,
     public translateService: TranslateService,
+    public dialog: MatDialog,
   ) { 
     this.playerList$ = this.lineupService.getPlayerListByPosition();
   }
@@ -36,6 +39,16 @@ export class LineupSelectionComponent implements OnInit {
 
   public getEmptyItem(): FormControl {
     return new FormControl();
+  }
+
+  public openPlayerSelectionDialog(list: PlayerItem[]) {
+    this.dialog.open(PlayerSelectDialogComponent, {
+      width: '600px',
+      height: '600px',
+      data: {
+        playerList: list
+      }
+    });
   }
 
 }
