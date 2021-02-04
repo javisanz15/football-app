@@ -5,8 +5,9 @@
     width: 70%;
     min-height: calc( 100vh - 128px );
     .left-side-container {
-      padding: 50px 100px 50px 50px;
+      padding: 50px;
       font-family: Poppins;
+      max-width: 1000px;
       .page-title {
         font-size: 35px;
         font-weight: 700;
@@ -14,6 +15,7 @@
     }
     .carousel-area {
       padding: 30px 0;
+      height: 265px;
       .inside-slide {
         padding: 10px;
         display: flex;
@@ -40,6 +42,9 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                .team-name {
+                  padding-top: 4px;
+                }
               }
             }
           }
