@@ -18,6 +18,18 @@
     "subtitle": "Find out the best possible lineup for your Fantasy League team for the next match date. Add all your players to the list and select the formation you would like to use. If you don't want to select a formation, just select \"Best\" in the formation selector and the tool will decide the best option.",
     "best": "Best",
     "formationLabel": "Select Formation",
-    "submit": "Find my Best Lineup!"
+    "submit": "Find my Best Lineup!",
+    "addPlayer": "Add Player",
+    "positions": {
+      "goalkeeper": "Goalkeeper",
+      "goalkeeperPlural": "Goalkeepers",
+      "defenderPlural": "Defender",
+      "defender": "Defender",
+      "midfielder": "Midfielder",
+      "midfielderPlural": "Midfielders",
+      "striker": "Striker",
+      "strikerPlural": "Strikers"
+    },
+    "emptyMessage": "You haven't selected any player for this position yet."
   }
 }

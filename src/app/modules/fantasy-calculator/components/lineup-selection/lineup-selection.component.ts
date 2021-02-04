@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { PlayerItem, PlayerLineup } from 'src/app/models/player.model';
 import { LineupService } from '../../services/lineup.service';
@@ -15,15 +16,12 @@ export class LineupSelectionComponent implements OnInit {
   public playerList$: Observable<PlayerLineup>;
   constructor(
     public lineupService: LineupService,
+    public translateService: TranslateService,
   ) { 
     this.playerList$ = this.lineupService.getPlayerListByPosition();
   }
 
   ngOnInit() {
-    this.addPlayer('goalkeeper');
-    this.addPlayer('defence');
-    this.addPlayer('midfield');
-    this.addPlayer('attack')
   }
 
   public addPlayer(position: string) {

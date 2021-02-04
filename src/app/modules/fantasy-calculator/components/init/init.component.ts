@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { LineupItem, PlayerItem } from 'src/app/models/player.model';
@@ -36,6 +36,10 @@ export class InitComponent implements OnInit {
 
   public getLineupForm(): FormGroup {
     return (this.form.get('lineup') as FormGroup);
+  }
+
+  public calculateBestLineup() {
+    console.log('calculate');
   }
 
 }

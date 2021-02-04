@@ -18,6 +18,18 @@
     "subtitle": "Encuentra la mejor alineacion de tu equipo de LaLigaFantasy para la siguiente jornada. Anade todos los jugadores de tu equipo y selecciona la formacion que deseas utilizar. Si no quieres elegir una formacion, selecciona la opcion \"Mejor\" y la aplicacion decidira la mejor opcion.",
     "best": "Mejor",
     "formationLabel": "Elige Formacion",
-    "submit": "Encuentra mi once ideal!"
+    "submit": "Encuentra mi once ideal!",
+    "addPlayer": "Añadir Jugador",
+    "positions": {
+      "goalkeeper": "Portero",
+      "goalkeeperPlural": "Porteros",
+      "defender": "Defensa",
+      "defenderPlural": "Defensas",
+      "midfielder": "Centrocampista",
+      "midfielderPlural": "Centrocampistas",
+      "striker": "Delantero",
+      "strikerPlural": "Delanteros"
+    },
+    "emptyMessage": "Aun no has elegido ningun jugador para esta posicion."
   }
 }
