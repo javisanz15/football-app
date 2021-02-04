@@ -1,0 +1,29 @@
+.init-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: Poppins;
+  .title-row {
+    margin-bottom: 40px;
+    .page-title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+  }
+  .main-row {
+    .right-side {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .formation-select-container {
+        width: 100%;
+        mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

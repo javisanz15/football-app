@@ -12,5 +12,12 @@
     "subtitle1": "Este es tu portal de referencia para mantenerte al tanto de La Liga de futbol. Consulta los puntos de los jugadores de tu equipo favorito y de tu equipo de La liga Fantasy. Puedes usar tambien nuestra aplicacion FantasyWiz, para seleccionar el mejor once posible para la siguiente jornada.",
     "subtitle2": "En la tabla inferior puedes ver los partidos correspondientes a la proxima jornada. Si quieres mas detalles acerca de un partido, puedes pinchar sobre el.",
     "subtitle3": "Para ver los resultados de todas las jornadas, puedes hacerlo en detalle entrando en la seccion \"Partidos\"."
+  },
+  "footballWiz": {
+    "title": "FotballWiz App",
+    "subtitle": "Encuentra la mejor alineacion de tu equipo de LaLigaFantasy para la siguiente jornada. Anade todos los jugadores de tu equipo y selecciona la formacion que deseas utilizar. Si no quieres elegir una formacion, selecciona la opcion \"Mejor\" y la aplicacion decidira la mejor opcion.",
+    "best": "Mejor",
+    "formationLabel": "Elige Formacion",
+    "submit": "Encuentra mi once ideal!"
   }
 }

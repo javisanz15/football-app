@@ -2,16 +2,16 @@ export interface CalendarItem {
   date: Date;
   featured: boolean;
   id: string;
-  local: CalendarTeamItem;
+  local: TeamItem;
   localScore: number;
   matchDate: Date;
   matchState: number;
   time: Date;
-  visitor: CalendarTeamItem;
+  visitor: TeamItem;
   visitorScore: number;
 }
 
-export interface CalendarTeamItem {
+export interface TeamItem {
   badgeColor: string;
   badgeGray: string;
   badgeWhite: string;

@@ -4,7 +4,7 @@ import { MatCarouselSlide, MatCarouselSlideComponent } from '@ngbmodule/material
 import { Observable } from 'rxjs';
 import { HomeService } from '../../services/home.service';
 import { tap } from 'rxjs/operators';
-import { CalendarItem, CalendarTeamItem } from 'src/app/models/calendar.model';
+import { CalendarItem } from 'src/app/models/calendar.model';
 import { DateService } from 'src/app/utils/date/date.service';
 import { Router } from '@angular/router';
 

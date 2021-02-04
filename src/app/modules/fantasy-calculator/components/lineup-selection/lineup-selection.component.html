@@ -1,0 +1,24 @@
+<div class="container lineup-selection-container" *ngIf="playerList$ | async as playerList">
+  <form [formGroup]="lineupForm">
+    <div class="row goalkeepers-row">
+      <div class="col-12 player-item">
+        {{playerList.goalkeepers[0].nickname}}
+      </div>
+    </div>
+    <div class="row defenders-row">
+      <div class="col-12 player-item">
+        {{playerList.defenders[0].nickname}}
+      </div>
+    </div>
+    <div class="row midfielders-row">
+      <div class="col-12 player-item">
+        {{playerList.midfielders[0].nickname}}
+      </div>
+    </div>
+    <div class="row strikers-row">
+      <div class="col-12 player-item">
+        {{playerList.strikers[0].nickname}}
+      </div>
+    </div>
+  </form>
+</div>
