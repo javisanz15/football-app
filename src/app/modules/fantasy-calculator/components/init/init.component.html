@@ -26,9 +26,10 @@
           </mat-form-field>
         </div>
         <div class="submit-button-row">
-          <button mat-raised-button color="primary"
-          (click)="calculateBestLineup()"
-          >{{'footballWiz.submit' | translate}}</button>
+          <button mat-raised-button color="primary" [disabled]="!form.valid"
+          (click)="calculateBestLineup()">
+            {{'footballWiz.submit' | translate}}
+          </button>
         </div>
       </div>
     </div>

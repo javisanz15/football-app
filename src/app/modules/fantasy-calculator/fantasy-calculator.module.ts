@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InitComponent } from './components/init/init.component';
 import { FantasyCalculatorRoutingModule } from './fantasy-calculator-routing.module';
 import { LineupSelectionComponent } from './components/lineup-selection/lineup-selection.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NG_VALIDATORS, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatCardModule } from '@angular/material/card';
@@ -39,6 +39,6 @@ import { PlayerCardComponent } from './components/player-card/player-card.compon
     LineupSelectionComponent,
     PlayerSelectDialogComponent,
     PlayerCardComponent,
-  ]
+  ],
 })
 export class FantasyCalculatorModule { }

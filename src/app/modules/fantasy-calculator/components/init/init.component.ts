@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { LineupItem, PlayerItem } from 'src/app/models/player.model';
 import { LineupService } from '../../services/lineup.service';
+import { validateLength } from '../../validators/football-wiz.validators';
 
 @Component({
   selector: 'app-init',
@@ -26,7 +27,7 @@ export class InitComponent implements OnInit {
         defence: this.fb.array([]),
         midfield: this.fb.array([]),
         attack: this.fb.array([]),
-      }),
+      }, [validateLength]),
       formation: ['best']
     })
   }
