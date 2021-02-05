@@ -31,5 +31,9 @@
       "strikerPlural": "Strikers"
     },
     "emptyMessage": "You haven't selected any player for this position yet."
+  },
+  "loading": "Loading",
+  "playerSelect": {
+    "title": "Select Player"
   }
 }

@@ -13,7 +13,7 @@ export class PlayerSelectDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { 
-    this.list = this.data.playerList;
+    this.list = this.data.playerList.sort(function(a, b){return b.points-a.points});
   }
 
   ngOnInit() {

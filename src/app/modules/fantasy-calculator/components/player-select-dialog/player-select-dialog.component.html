@@ -1,3 +1,9 @@
-<p>
-  player-select-dialog works!
-</p>
+<h1 mat-dialog-title>{{'playerSelect.title' | translate}}</h1>
+<div mat-dialog-content class="card-content">
+  <div class="card-container" *ngFor="let player of list">
+    <mat-card>{{player.nickname}} - {{player.points}}</mat-card>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

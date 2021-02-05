@@ -31,5 +31,9 @@
       "strikerPlural": "Delanteros"
     },
     "emptyMessage": "Aun no has elegido ningun jugador para esta posicion."
+  },
+  "loading": "Cargando",
+  "playerSelect": {
+    "title": "Elegir Jugador"
   }
 }

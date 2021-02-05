@@ -1,11 +1,11 @@
-<div class="container lineup-selection-container" *ngIf="playerList$ | async as playerList">
+<div class="container lineup-selection-container" *ngIf="playerList$ | async as playerList; else loading">
   <form [formGroup]="lineupForm">
     <div class="row goalkeepers-row">
       <div class="position-row-title col-12">
         {{'footballWiz.positions.goalkeeperPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.goalkeepers)">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.goalkeepers, 'goalkeeper')">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -24,7 +24,7 @@
         {{'footballWiz.positions.defenderPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.defenders)">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.defenders, 'defence')">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -33,7 +33,7 @@
         <div formArrayName="defence" *ngFor="let item of lineupForm.get('defence')['controls']; let i = index;">
           <mat-card></mat-card>
         </div>
-        <div class="empty-message" *ngIf="lineupForm.get('goalkeeper')['controls'].length < 1">
+        <div class="empty-message" *ngIf="lineupForm.get('defence')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
         </div>
       </div>
@@ -43,7 +43,7 @@
         {{'footballWiz.positions.midfielderPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.midfielders)">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.midfielders, 'midfield')">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -52,7 +52,7 @@
         <div formArrayName="midfield" *ngFor="let item of lineupForm.get('midfield')['controls']; let i = index;">
           <mat-card></mat-card>
         </div>
-        <div class="empty-message" *ngIf="lineupForm.get('goalkeeper')['controls'].length < 1">
+        <div class="empty-message" *ngIf="lineupForm.get('midfield')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
         </div>
       </div>
@@ -62,7 +62,7 @@
         {{'footballWiz.positions.strikerPlural' | translate}}
       </div>
       <div class="add-button-col col-12">
-        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.strikers)">
+        <button mat-raised-button color="primary" (click)="openPlayerSelectionDialog(playerList.strikers, 'attack')">
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
@@ -71,10 +71,14 @@
         <div formArrayName="attack" *ngFor="let item of lineupForm.get('attack')['controls']; let i = index;">
           <mat-card></mat-card>
         </div>
-        <div class="empty-message" *ngIf="lineupForm.get('goalkeeper')['controls'].length < 1">
+        <div class="empty-message" *ngIf="lineupForm.get('attack')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
         </div>
       </div>
     </div>
   </form>
 </div>
+
+<ng-template #loading>
+  {{'loading' | translate}}...
+</ng-template>

@@ -41,12 +41,18 @@ export class LineupSelectionComponent implements OnInit {
     return new FormControl();
   }
 
-  public openPlayerSelectionDialog(list: PlayerItem[]) {
-    this.dialog.open(PlayerSelectDialogComponent, {
+  public openPlayerSelectionDialog(list: PlayerItem[], position: string) {
+    const dialogRef =this.dialog.open(PlayerSelectDialogComponent, {
       width: '600px',
       height: '600px',
       data: {
         playerList: list
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.addPlayer(position);
       }
     });
   }
