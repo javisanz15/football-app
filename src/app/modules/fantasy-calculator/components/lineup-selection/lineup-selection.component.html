@@ -9,10 +9,19 @@
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
+        <button mat-stroked-button color="primary" (click)="deleteAllSelections('goalkeeper')"
+        *ngIf="isFullList('goalkeeper')">
+          {{'footballWiz.deleteAll' | translate}}
+        </button>
       </div>
       <div class="col-12 player-item">
-        <div formArrayName="goalkeeper" *ngFor="let item of lineupForm.get('goalkeeper')['controls']; let i = index;">
-          <mat-card></mat-card>
+        <div formArrayName="goalkeeper" *ngFor="let item of lineupForm.get('goalkeeper')['controls']; let i = index;"
+        class="margin-bottom">
+          <div [formGroupName]="i">
+            <app-player-card [player]="getPlayerToDisplay('goalkeeper', i)" [closeAvailable]="true"
+            (playerDeleted)="deletePlayer('goalkeeper', i)">
+            </app-player-card>
+          </div>
         </div>
         <div class="empty-message" *ngIf="lineupForm.get('goalkeeper')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
@@ -28,10 +37,19 @@
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
+        <button mat-stroked-button color="primary" (click)="deleteAllSelections('defence')"
+        *ngIf="isFullList('defence')">
+          {{'footballWiz.deleteAll' | translate}}
+        </button>
       </div>
       <div class="col-12 player-item">
-        <div formArrayName="defence" *ngFor="let item of lineupForm.get('defence')['controls']; let i = index;">
-          <mat-card></mat-card>
+        <div formArrayName="defence" *ngFor="let item of lineupForm.get('defence')['controls']; let i = index;"
+        class="margin-bottom">
+          <div [formGroupName]="i">
+            <app-player-card [player]="getPlayerToDisplay('defence', i)" [closeAvailable]="true"
+            (playerDeleted)="deletePlayer('defence', i)">
+            </app-player-card>
+          </div>
         </div>
         <div class="empty-message" *ngIf="lineupForm.get('defence')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
@@ -47,10 +65,19 @@
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
+        <button mat-stroked-button color="primary" (click)="deleteAllSelections('midfield')"
+        *ngIf="isFullList('midfield')">
+          {{'footballWiz.deleteAll' | translate}}
+        </button>
       </div>
       <div class="col-12 player-item">
-        <div formArrayName="midfield" *ngFor="let item of lineupForm.get('midfield')['controls']; let i = index;">
-          <mat-card></mat-card>
+        <div formArrayName="midfield" *ngFor="let item of lineupForm.get('midfield')['controls']; let i = index;"
+        class="margin-bottom">
+          <div [formGroupName]="i">
+            <app-player-card [player]="getPlayerToDisplay('midfield', i)" [closeAvailable]="true"
+            (playerDeleted)="deletePlayer('midfield', i)">
+            </app-player-card>
+          </div>
         </div>
         <div class="empty-message" *ngIf="lineupForm.get('midfield')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}
@@ -66,10 +93,19 @@
           <mat-icon aria-hidden="false" aria-label="plus">add</mat-icon>
           {{'footballWiz.addPlayer' | translate}}
         </button>
+        <button mat-stroked-button color="primary" (click)="deleteAllSelections('attack')"
+        *ngIf="isFullList('attack')">
+          {{'footballWiz.deleteAll' | translate}}
+        </button>
       </div>
       <div class="col-12 player-item">
-        <div formArrayName="attack" *ngFor="let item of lineupForm.get('attack')['controls']; let i = index;">
-          <mat-card></mat-card>
+        <div formArrayName="attack" *ngFor="let item of lineupForm.get('attack')['controls']; let i = index;"
+        class="margin-bottom">
+          <div [formGroupName]="i">
+            <app-player-card [player]="getPlayerToDisplay('attack', i)" [closeAvailable]="true"
+            (playerDeleted)="deletePlayer('attack', i)">
+            </app-player-card>
+          </div>
         </div>
         <div class="empty-message" *ngIf="lineupForm.get('attack')['controls'].length < 1">
           {{'footballWiz.emptyMessage' | translate}}

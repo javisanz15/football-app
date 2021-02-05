@@ -20,6 +20,7 @@
     "formationLabel": "Elige Formacion",
     "submit": "Encuentra mi once ideal!",
     "addPlayer": "Añadir Jugador",
+    "deleteAll": "Borrar Todo",
     "positions": {
       "goalkeeper": "Portero",
       "goalkeeperPlural": "Porteros",
@@ -28,9 +29,20 @@
       "midfielder": "Centrocampista",
       "midfielderPlural": "Centrocampistas",
       "striker": "Delantero",
-      "strikerPlural": "Delanteros"
+      "strikerPlural": "Delanteros",
+      "goalkeeperShort": "POR",
+      "defenderShort": "DEF",
+      "midfielderShort": "CEN",
+      "strikerShort": "DEL"
     },
-    "emptyMessage": "Aun no has elegido ningun jugador para esta posicion."
+    "emptyMessage": "Aun no has elegido ningun jugador para esta posicion.",
+    "searchInput" : "Buscar Jugador",
+    "status": {
+      "ok": "Disponible",
+      "doubtful" : "Cuestionable",
+      "injured" : "Lesionado",
+      "suspended": "Sancionado"
+    }
   },
   "loading": "Cargando",
   "playerSelect": {

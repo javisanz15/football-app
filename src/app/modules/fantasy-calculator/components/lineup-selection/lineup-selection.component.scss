@@ -6,3 +6,12 @@
 .row, .add-button-col {
   margin-bottom: 25px;
 }
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.add-button-col {
+  display: flex;
+  justify-content: space-between;
+}

@@ -27,9 +27,9 @@ export class LineupSelectionComponent implements OnInit {
   ngOnInit() {
   }
 
-  public addPlayer(position: string) {
+  public addPlayer(position: string, player: PlayerItem) {
     const array = this.lineupForm.get(position) as FormArray;
-    array.push(this.getEmptyItem());
+    array.push(new FormControl(player));
   }
 
   public deletePlayer(position: string, index: number) {
@@ -42,19 +42,36 @@ export class LineupSelectionComponent implements OnInit {
   }
 
   public openPlayerSelectionDialog(list: PlayerItem[], position: string) {
+    const array = (this.lineupForm.get(position) as FormArray).value;
+    const filteredList = list.filter(item => !array.find(element => element.id === item.id));
     const dialogRef =this.dialog.open(PlayerSelectDialogComponent, {
       width: '600px',
       height: '600px',
       data: {
-        playerList: list
+        playerList: filteredList
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
-        this.addPlayer(position);
+        this.addPlayer(position, result);
       }
     });
+  }
+
+  public getPlayerToDisplay(position: string, index: number): PlayerItem {
+    const array = this.lineupForm.get(position) as FormArray;
+   return (this.lineupForm.get(position) as FormArray).controls[index].value;
+  }
+
+  public isFullList(position: string): boolean {
+    const array = this.lineupForm.get(position) as FormArray;
+    return array.value.length > 0;
+  }
+
+  public deleteAllSelections(position: string) {
+    const array = this.lineupForm.get(position) as FormArray;
+    array.clear();
   }
 
 }

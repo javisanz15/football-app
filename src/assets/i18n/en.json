@@ -20,6 +20,7 @@
     "formationLabel": "Select Formation",
     "submit": "Find my Best Lineup!",
     "addPlayer": "Add Player",
+    "deleteAll": "Delete All",
     "positions": {
       "goalkeeper": "Goalkeeper",
       "goalkeeperPlural": "Goalkeepers",
@@ -28,9 +29,20 @@
       "midfielder": "Midfielder",
       "midfielderPlural": "Midfielders",
       "striker": "Striker",
-      "strikerPlural": "Strikers"
+      "strikerPlural": "Strikers",
+      "goalkeeperShort": "GK",
+      "defenderShort": "DEF",
+      "midfielderShort": "MID",
+      "strikerShort": "STR"
     },
-    "emptyMessage": "You haven't selected any player for this position yet."
+    "emptyMessage": "You haven't selected any player for this position yet.",
+    "searchInput" : "Search Player",
+    "status": {
+      "ok": "Available",
+      "doubtful" : "Questionable",
+      "injured" : "Injured",
+      "suspended": "Suspended"
+    }
   },
   "loading": "Loading",
   "playerSelect": {

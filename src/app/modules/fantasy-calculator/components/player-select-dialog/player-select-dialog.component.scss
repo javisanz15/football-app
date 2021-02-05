@@ -1,13 +1,16 @@
 .card-content {
-  max-height: 450px;
-  .card-container {
-    margin-bottom: 10px;
-    .player-card {
-      display: flex;
-      justify-content: space-between;
-      .player-image {
-        max-height: 100px;
-      }
+  font-family: 'Poppins';
+  overflow: unset;
+  .input-container {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  .player-list-container {
+    max-height: 425px;
+    overflow-y: auto;
+    .card-container {
+      margin-bottom: 10px;
     }
   }
 }

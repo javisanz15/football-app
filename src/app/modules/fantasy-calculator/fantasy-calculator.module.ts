@@ -13,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PlayerSelectDialogComponent } from './components/player-select-dialog/player-select-dialog.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatInputModule} from '@angular/material/input';
+import { PlayerCardComponent } from './components/player-card/player-card.component';
 
 @NgModule({
   imports: [
@@ -28,11 +31,14 @@ import { PlayerSelectDialogComponent } from './components/player-select-dialog/p
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatChipsModule,
+    MatInputModule,
   ],
   declarations: [
     InitComponent,
     LineupSelectionComponent,
     PlayerSelectDialogComponent,
+    PlayerCardComponent,
   ]
 })
 export class FantasyCalculatorModule { }

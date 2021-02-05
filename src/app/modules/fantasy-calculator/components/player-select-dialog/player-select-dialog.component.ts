@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PlayerItem } from 'src/app/models/player.model';
 
 @Component({
@@ -10,14 +11,30 @@ import { PlayerItem } from 'src/app/models/player.model';
 export class PlayerSelectDialogComponent implements OnInit {
 
   public list: PlayerItem[];
+  public copyList: PlayerItem[];
+  public form: FormGroup;
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) { 
-    this.list = this.data.playerList.sort(function(a, b){return b.points-a.points});
+    public dialogRef: MatDialogRef<PlayerSelectDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public fb: FormBuilder,
+  ) {
+    this.list = this.data.playerList.sort(function (a, b) { return b.points - a.points });
+    this.copyList = this.list;
+    this.form = this.fb.group({
+      playerToSearch: [null]
+    })
   }
 
   ngOnInit() {
-    console.log(this.list);
+  }
+
+  public filterPlayerList() {
+    const filter = this.form.get('playerToSearch').value;
+    this.copyList = this.list.filter(item => item.nickname.toLocaleLowerCase().includes(filter));
+  }
+
+  public closeDialog(player: PlayerItem) {
+    this.dialogRef.close(player);
   }
 
 }

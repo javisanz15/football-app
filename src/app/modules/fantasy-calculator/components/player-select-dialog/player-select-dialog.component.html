@@ -1,14 +1,15 @@
 <h1 mat-dialog-title>{{'playerSelect.title' | translate}}</h1>
 <div mat-dialog-content class="card-content">
-  <div class="card-container" *ngFor="let player of list">
-    <mat-card class="player-card">
-      <div class="player-image-area">
-        <img src="{{player.images.transparent['128x128']}}" class="player-image" alt="Player">
-      </div>
-      {{player.nickname}} - {{player.points}}
-    </mat-card>
+  <div class="input-container" [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'footballWiz.searchInput' | translate}}</mat-label>
+      <input matInput formControlName="playerToSearch" (input)="filterPlayerList()">
+    </mat-form-field>
   </div>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <div class="player-list-container">
+    <div class="card-container" *ngFor="let player of copyList">
+      <app-player-card [player]="player"
+      (playerSelected)="closeDialog(player)"></app-player-card>
+    </div>
+  </div>
 </div>
