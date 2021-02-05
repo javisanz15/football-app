@@ -2,5 +2,12 @@
   max-height: 450px;
   .card-container {
     margin-bottom: 10px;
+    .player-card {
+      display: flex;
+      justify-content: space-between;
+      .player-image {
+        max-height: 100px;
+      }
+    }
   }
 }
