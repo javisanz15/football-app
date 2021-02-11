@@ -42,6 +42,13 @@
       "doubtful" : "Cuestionable",
       "injured" : "Lesionado",
       "suspended": "Sancionado"
+    },
+    "errors": {
+      "length": "El equipo tiene que tener al menos 11 jugadores!",
+      "emptyPosition": "No puedes dejar ninguna posicion vacia!",
+      "defence": "Debe haber al menos 3 defensas en tu equipo!",
+      "midfield": "Debe haber al menos 3 medios en tu equipo!",
+      "attack": "Debe haber al menos 2 delanteros en tu equipo!"
     }
   },
   "loading": "Cargando",

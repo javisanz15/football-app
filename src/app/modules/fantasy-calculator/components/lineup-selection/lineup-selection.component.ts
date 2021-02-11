@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { PlayerItem, PlayerLineup } from 'src/app/models/player.model';
+import { LineupItem, PlayerItem, PlayerLineup } from 'src/app/models/player.model';
 import { LineupService } from '../../services/lineup.service';
 import {MatDialog} from '@angular/material/dialog';
 import { PlayerSelectDialogComponent } from '../player-select-dialog/player-select-dialog.component';

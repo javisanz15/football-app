@@ -16,6 +16,7 @@ import { PlayerSelectDialogComponent } from './components/player-select-dialog/p
 import {MatChipsModule} from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
 import { PlayerCardComponent } from './components/player-card/player-card.component';
+import { BestLineupComponent } from './components/best-lineup/best-lineup.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { PlayerCardComponent } from './components/player-card/player-card.compon
     LineupSelectionComponent,
     PlayerSelectDialogComponent,
     PlayerCardComponent,
+    BestLineupComponent,
   ],
 })
 export class FantasyCalculatorModule { }

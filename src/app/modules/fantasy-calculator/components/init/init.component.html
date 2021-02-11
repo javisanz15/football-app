@@ -18,7 +18,7 @@
           <mat-form-field appearance="outline">
             <mat-label>{{'footballWiz.formationLabel' | translate}}</mat-label>
             <mat-select formControlName="formation" name="formation">
-              <mat-option [value]="'best'">{{'footballWiz.best' | translate}}</mat-option>
+              <mat-option [value]="bestLineup">{{'footballWiz.best' | translate}}</mat-option>
               <mat-option *ngFor="let lineup of lineupList" [value]="lineup">
                 {{lineup.label}}
               </mat-option>
@@ -26,7 +26,29 @@
           </mat-form-field>
         </div>
         <div class="submit-button-row">
-          <button mat-raised-button color="primary" [disabled]="!form.valid"
+          <div class="invalid" *ngIf="form.get('lineup').errors?.lengthInvalidError">
+            {{'footballWiz.errors.length' | translate}}
+          </div>
+          <div class="invalid" *ngIf="!form.get('lineup').errors?.lengthInvalidError && 
+            form.get('lineup').errors?.emptyPositionError">
+            {{'footballWiz.errors.emptyPosition' | translate}}
+          </div>
+          <div class="invalid" *ngIf="!form.get('lineup').errors?.lengthInvalidError &&
+            !form.get('lineup').errors?.emptyPositionError &&
+            form.get('lineup').errors?.defenceError">
+            {{'footballWiz.errors.defence' | translate}}
+          </div>
+          <div class="invalid" *ngIf="!form.get('lineup').errors?.lengthInvalidError &&
+            !form.get('lineup').errors?.emptyPositionError &&
+            form.get('lineup').errors?.midfieldError">
+            {{'footballWiz.errors.midfield' | translate}}
+          </div>
+          <div class="invalid" *ngIf="!form.get('lineup').errors?.lengthInvalidError &&
+            !form.get('lineup').errors?.emptyPositionError &&
+            form.get('lineup').errors?.attackError">
+            {{'footballWiz.errors.attack' | translate}}
+          </div>
+          <button mat-raised-button color="primary" [disabled]="!form.valid || !form.get('lineup').valid"
           (click)="calculateBestLineup()">
             {{'footballWiz.submit' | translate}}
           </button>

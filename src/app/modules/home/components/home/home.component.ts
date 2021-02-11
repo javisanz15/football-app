@@ -48,4 +48,8 @@ export class HomeComponent implements OnInit {
     return tempArray;
   }
 
+  public getResultValue(score: number): string {
+    return score || score === 0 ? score.toString() : '';
+  }
+
 }

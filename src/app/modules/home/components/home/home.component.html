@@ -33,11 +33,11 @@
                     </div>
                     <div class="team-divider col-4">
                       <div class="team-result">
-                        {{card.localScore || ''}}
+                        {{ getResultValue(card.localScore)}}
                       </div>
                       -
                       <div class="team-result">
-                        {{card.visitorScore || ''}}
+                        {{ getResultValue(card.visitorScore)}}
                       </div>
                     </div>
                     <div class="team-area col-4">

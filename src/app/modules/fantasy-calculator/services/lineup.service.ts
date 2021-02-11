@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { LineupItem, PlayerItem, PlayerLineup } from 'src/app/models/player.model';
@@ -81,12 +82,14 @@ public getAvailableFormations(): Observable<LineupItem[]> {
   return of(this.availableLineups);
 }
 
-// public getSinglePlayer(): Observable<PlayerItem> {
-
-// }
-
-// public getPlayersByTeam(teamId: string): Observable<PlayerItem[]> {
-
-// }
+public calculateBestLineup(formResult: FormGroup, formation: LineupItem): PlayerLineup {
+  const formValue = formResult.value;
+  return {
+    goalkeepers: formValue.goalkeeper.slice(0,formation.goalkeepers || 1),
+    defenders: formValue.defence.slice(0,formation.defenders || 4),
+    midfielders: formValue.midfield.slice(0,formation.midfielders || 4),
+    strikers: formValue.attack.slice(0,formation.strikers || 2)
+  }
+}
 
 }
